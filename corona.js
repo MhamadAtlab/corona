@@ -17,7 +17,9 @@ function info(){
 fetch('https://covid19.mathdro.id/api/countries/'+name)
   .then(response => response.json())
   .then(json =>{
-          
+            while (lig.hasChildNodes()) {  
+                lig.removeChild(lig.firstChild);
+              }
             var nb=document.createElement('li');
             nb.innerHTML="Confirmed : "+json.confirmed.value;
             lig.appendChild(nb);
