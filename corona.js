@@ -17,7 +17,7 @@ function info(){
     }
 if (name.toLowerCase()=="israel") {
   var nb=document.createElement('li');
-            nb.innerHTML="there is no country called Israel !!!";
+            nb.innerHTML="there is no country called Israel !!! Did you mean Palestine ?!";
             lig.appendChild(nb);
 }
   else{  
