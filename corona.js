@@ -10,20 +10,15 @@ fetch('https://covid19.mathdro.id/api/')
       
   })
 function info(){
+  
     var lig=document.getElementById('new');
     var name=document.getElementById('un').value;
     while (lig.hasChildNodes()) {  
       lig.removeChild(lig.firstChild);
-    }
-if (name.toLowerCase()=="israel") {
-  var nb=document.createElement('li');
-            nb.innerHTML="there is no country called Israel !!! Did you mean Palestine ?!";
-            lig.appendChild(nb);
-}
-  else{  
-fetch('https://covid19.mathdro.id/api/countries/'+name)
-  .then(response => response.json())
-  .then(json =>{
+         }
+    fetch('https://covid19.mathdro.id/api/countries/'+name)
+      .then(response => response.json())
+      .then(json =>{
             var nb=document.createElement('li');
             nb.innerHTML="Confirmed : "+json.confirmed.value;
             lig.appendChild(nb);
@@ -34,8 +29,5 @@ fetch('https://covid19.mathdro.id/api/countries/'+name)
             nb.innerHTML="Deaths : "+json.deaths.value;
             lig.appendChild(nb);
         
-          
-      
-  })
-  }
+            })
 }
